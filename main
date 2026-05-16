@@ -1,0 +1,27 @@
+Password=input ("Enter password........")
+if(Password!="nai batana"):
+        print("access denied")
+        exit()
+left = 'a'
+right = 'd'
+fight = 'j'
+run = 'l'
+sword ='g'
+shield = 'p'
+Health=100
+Attack_damage=-10
+Choice_1=input ("left .a. or right .d. ?:")
+if (Choice_1=='left'):
+          print("Enemy found!")
+else:
+        print("treasure found")
+Choice_3=input("Sword .g. or Shield .p.?")
+if(Choice_3=='sword'):
+        print("Pick sword")
+else:
+     print('Pick Shield')
+Choice_2=input("fight .j. or run .l. ?")
+if(Choice_2=='j'):
+       print("fight!")   
+else:
+            print("Run!")
