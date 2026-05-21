@@ -53,7 +53,6 @@ while True:
              attack_damage += 2
              time.sleep(0.3)
              print(f"Damage Increased To: {attack_damage}")
-             pass
              continue
     elif(Choice_1=="d"):
          print("Treasure found! ")
