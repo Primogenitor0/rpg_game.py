@@ -1,0 +1,70 @@
+import time
+left="a"
+right="d"
+fight="j"
+run="i"
+sword="g"
+shield="p"
+training ="t"
+player_health = 100
+enemy_health = 50
+attack_damage = 10
+inventory = []
+stats=(player_health)
+def animate(text):
+    for i in range(3):
+      print(text+"."*(i+1))
+      time.sleep(0.8)
+User_name = input("Enter a name: ")
+if len(User_name)>8:
+            print("User_name cannot contain more than 8 characters")
+            exit()
+else : 
+            time.sleep(0.7)
+            print (f"Welcome to The Game 🎮{User_name}")
+            time.sleep(0.7)
+            print("let's explore the way ahead!")
+            time.sleep(0.7)
+            print("Choose a Direction to go!")
+            time.sleep(0.7)
+while True:           
+    Choice_1= input("1.Left.a.\n2.Right.d.\n3.Show inventory.q.\n4.Show Stats.r.?\n5.Training.t.")
+    if(Choice_1=="a"):   
+        print("Enemy found")
+        Choice_3=input("1.Fight.j.\n2.Run.i.?")
+        if(Choice_3=="j"):
+            print("fighting")
+        elif(Choice_3=="run"):
+             print("Running")
+             exit()
+        while enemy_health>0:
+          enemy_health = enemy_health - attack_damage
+          animate("Attacking!")
+          time.sleep(1)
+          print(-enemy_health)
+    elif(Choice_1=="q"):
+         for item in inventory:
+             print({item})
+    elif(Choice_1=="r"):
+             print(f"HP={stats}")
+    elif(Choice_1=="t"):
+          for t in range(5):
+             animate("Training")
+             attack_damage += 2
+             time.sleep(0.3)
+             print(f"Damage Increased To: {attack_damage}")
+             pass
+             continue
+    elif(Choice_1=="d"):
+         print("Treasure found! ")
+    Choice_2=input("Pick sword or pick shield?")
+    if(Choice_2=="sword"):
+      print('Picked sword') 
+      inventory.append("Sword 🗡️")
+      attack_damage += 10
+      continue
+    elif(Choice_2=="shield"):
+      print("Picked shield ")
+      inventory.append("Shield 🛡️")
+      player_health += 20
+      continue
